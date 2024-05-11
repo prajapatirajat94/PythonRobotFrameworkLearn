@@ -1,90 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.11.0 on win32)" generated="2024-05-11T11:44:42.474135" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.11.0 on win32)" generated="2024-05-11T11:54:32.719413" rpa="false" schemaversion="5">
 <suite id="s1" name="RobotFrameworkPractice" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice">
 <suite id="s1-s1" name="RobotPractice" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice\RobotPractice">
-<suite id="s1-s1-s1" name="HandleBrowserWindows" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice\RobotPractice\HandleBrowserWindows.robot">
-<test id="s1-s1-s1-t1" name="SwitchwindowTestcase" line="10">
+<suite id="s1-s1-s1" name="HandleTabbedWindows" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice\RobotPractice\HandleTabbedWindows.robot">
+<test id="s1-s1-s1-t1" name="TabbedWindowTestCase" line="11">
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>1</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2024-05-11T11:44:42.755416" elapsed="0.000000"/>
+<status status="PASS" start="2024-05-11T11:54:33.000618" elapsed="0.000000"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-05-11T11:44:42.755416" level="INFO">Opening browser 'chrome' to base url 'https://demo.automationtesting.in/Windows.html'.</msg>
+<msg time="2024-05-11T11:54:33.000618" level="INFO">Opening browser 'chrome' to base url 'https://demo.automationtesting.in/Windows.html'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-05-11T11:44:42.755416" elapsed="5.536921"/>
+<status status="PASS" start="2024-05-11T11:54:33.000618" elapsed="6.752927"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-05-11T11:44:48.292337" elapsed="1.044367"/>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-11T11:54:39.753545" level="INFO">Clicking button '//a[@href='http://www.selenium.dev']//button[@class='btn btn-info'][normalize-space()='click']'.</msg>
+<arg>//a[@href='http://www.selenium.dev']//button[@class='btn btn-info'][normalize-space()='click']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-11T11:54:39.753545" elapsed="5.210407"/>
 </kw>
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-05-11T11:44:49.336704" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
-<arg>https://www.google.com/</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-05-11T11:44:49.336704" elapsed="4.172904"/>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<msg time="2024-05-11T11:55:00.222523" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-05-11T11:55:00.222523" level="FAIL">No window matching handle, name, title or URL 'Seleniu' found.</msg>
+<arg>Seleniu</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="FAIL" start="2024-05-11T11:54:44.963952" elapsed="15.258571">No window matching handle, name, title or URL 'Seleniu' found.</status>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-05-11T11:44:53.509608" elapsed="1.031015"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//span[normalize-space()='Downloads']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-05-11T11:55:00.222523" elapsed="0.000000"/>
 </kw>
-<kw name="Switch Browser" owner="SeleniumLibrary">
-<arg>1</arg>
-<doc>Switches between active browsers using ``index_or_alias``.</doc>
-<status status="PASS" start="2024-05-11T11:44:54.540623" elapsed="0.000000"/>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>Frames &amp; windows</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" start="2024-05-11T11:55:00.222523" elapsed="0.000000"/>
 </kw>
-<kw name="Get Title" owner="SeleniumLibrary">
-<msg time="2024-05-11T11:44:55.555452" level="INFO">${title1} = Frames &amp; windows</msg>
-<var>${title1}</var>
-<doc>Returns the title of the current page.</doc>
-<status status="PASS" start="2024-05-11T11:44:54.540623" elapsed="1.014829"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${title1}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-05-11T11:44:55.556456" elapsed="0.000997"/>
-</kw>
-<kw name="Switch Browser" owner="SeleniumLibrary">
-<arg>2</arg>
-<doc>Switches between active browsers using ``index_or_alias``.</doc>
-<status status="PASS" start="2024-05-11T11:44:55.557453" elapsed="0.001107"/>
-</kw>
-<kw name="Get Title" owner="SeleniumLibrary">
-<msg time="2024-05-11T11:44:56.568040" level="INFO">${title2} = Google</msg>
-<var>${title2}</var>
-<doc>Returns the title of the current page.</doc>
-<status status="PASS" start="2024-05-11T11:44:55.558560" elapsed="1.009480"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${title2}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-05-11T11:44:56.568040" elapsed="0.000000"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Open New Seperate Windows']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-05-11T11:55:00.222523" elapsed="0.000000"/>
 </kw>
 <kw name="Close All Browsers" owner="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2024-05-11T11:44:56.568040" elapsed="6.158021"/>
+<status status="NOT RUN" start="2024-05-11T11:55:00.222523" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-05-11T11:44:42.755416" elapsed="19.970645"/>
+<status status="FAIL" start="2024-05-11T11:54:33.000618" elapsed="27.221905">No window matching handle, name, title or URL 'Seleniu' found.</status>
 </test>
-<status status="PASS" start="2024-05-11T11:44:42.521018" elapsed="20.205043"/>
+<status status="FAIL" start="2024-05-11T11:54:32.750646" elapsed="27.471877"/>
 </suite>
-<status status="PASS" start="2024-05-11T11:44:42.521018" elapsed="20.205043"/>
+<status status="FAIL" start="2024-05-11T11:54:32.750646" elapsed="27.471877"/>
 </suite>
-<status status="PASS" start="2024-05-11T11:44:42.489751" elapsed="20.236310"/>
+<status status="FAIL" start="2024-05-11T11:54:32.719413" elapsed="27.518772"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="RobotFrameworkPractice">RobotFrameworkPractice</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="RobotPractice">RobotFrameworkPractice.RobotPractice</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="HandleBrowserWindows">RobotFrameworkPractice.RobotPractice.HandleBrowserWindows</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="RobotFrameworkPractice">RobotFrameworkPractice</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="RobotPractice">RobotFrameworkPractice.RobotPractice</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="HandleTabbedWindows">RobotFrameworkPractice.RobotPractice.HandleTabbedWindows</stat>
 </suite>
 </statistics>
 <errors>
