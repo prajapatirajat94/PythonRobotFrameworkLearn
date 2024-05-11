@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.0 on win32)" generated="2024-05-11T11:44:42.474135" rpa="false" schemaversion="5">
+<suite id="s1" name="RobotFrameworkPractice" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice">
+<suite id="s1-s1" name="RobotPractice" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice\RobotPractice">
+<suite id="s1-s1-s1" name="HandleBrowserWindows" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice\RobotPractice\HandleBrowserWindows.robot">
+<test id="s1-s1-s1-t1" name="SwitchwindowTestcase" line="10">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-05-11T11:44:42.755416" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-11T11:44:42.755416" level="INFO">Opening browser 'chrome' to base url 'https://demo.automationtesting.in/Windows.html'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-11T11:44:42.755416" elapsed="5.536921"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-11T11:44:48.292337" elapsed="1.044367"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-11T11:44:49.336704" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
+<arg>https://www.google.com/</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-11T11:44:49.336704" elapsed="4.172904"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-11T11:44:53.509608" elapsed="1.031015"/>
+</kw>
+<kw name="Switch Browser" owner="SeleniumLibrary">
+<arg>1</arg>
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<status status="PASS" start="2024-05-11T11:44:54.540623" elapsed="0.000000"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2024-05-11T11:44:55.555452" level="INFO">${title1} = Frames &amp; windows</msg>
+<var>${title1}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2024-05-11T11:44:54.540623" elapsed="1.014829"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${title1}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-11T11:44:55.556456" elapsed="0.000997"/>
+</kw>
+<kw name="Switch Browser" owner="SeleniumLibrary">
+<arg>2</arg>
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<status status="PASS" start="2024-05-11T11:44:55.557453" elapsed="0.001107"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2024-05-11T11:44:56.568040" level="INFO">${title2} = Google</msg>
+<var>${title2}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2024-05-11T11:44:55.558560" elapsed="1.009480"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${title2}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-11T11:44:56.568040" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-05-11T11:44:56.568040" elapsed="6.158021"/>
+</kw>
+<status status="PASS" start="2024-05-11T11:44:42.755416" elapsed="19.970645"/>
+</test>
+<status status="PASS" start="2024-05-11T11:44:42.521018" elapsed="20.205043"/>
+</suite>
+<status status="PASS" start="2024-05-11T11:44:42.521018" elapsed="20.205043"/>
+</suite>
+<status status="PASS" start="2024-05-11T11:44:42.489751" elapsed="20.236310"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="RobotFrameworkPractice">RobotFrameworkPractice</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="RobotPractice">RobotFrameworkPractice.RobotPractice</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="HandleBrowserWindows">RobotFrameworkPractice.RobotPractice.HandleBrowserWindows</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
