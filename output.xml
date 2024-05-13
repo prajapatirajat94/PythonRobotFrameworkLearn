@@ -1,81 +1,1292 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.11.0 on win32)" generated="2024-05-12T13:43:16.938225" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.11.0 on win32)" generated="2024-05-12T21:10:04.773361" rpa="false" schemaversion="5">
 <suite id="s1" name="RobotFrameworkPractice" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice">
 <suite id="s1-s1" name="RobotPractice" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice\RobotPractice">
 <suite id="s1-s1-s1" name="GetAllLinks" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice\RobotPractice\GetAllLinks.robot">
-<test id="s1-s1-s1-t1" name="TESTLINK" line="9">
+<test id="s1-s1-s1-t1" name="TESTLINK" line="10">
+<kw name="WAitforSeconds" owner="resource2">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>${i}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-05-12T21:10:05.054607" elapsed="0.000000"/>
+</kw>
+<arg>0.5</arg>
+<status status="PASS" start="2024-05-12T21:10:05.054607" elapsed="0.000000"/>
+</kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-05-12T13:43:17.219485" level="INFO">Opening browser 'chrome' to base url 'https://demo.guru99.com/test/newtours/'.</msg>
+<msg time="2024-05-12T21:10:05.054607" level="INFO">Opening browser 'chrome' to base url 'https://demo.guru99.com/test/newtours/'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-05-12T13:43:17.219485" elapsed="3.261913"/>
+<status status="PASS" start="2024-05-12T21:10:05.054607" elapsed="4.233110"/>
 </kw>
 <kw name="Get Element Count" owner="SeleniumLibrary">
-<msg time="2024-05-12T13:43:20.508043" level="INFO">${AllLinksCount} = 61</msg>
+<msg time="2024-05-12T21:10:09.932972" level="INFO">${AllLinksCount} = 61</msg>
 <var>${AllLinksCount}</var>
 <arg>//a</arg>
 <doc>Returns the number of elements matching ``locator``.</doc>
-<status status="PASS" start="2024-05-12T13:43:20.481398" elapsed="0.026645"/>
+<status status="PASS" start="2024-05-12T21:10:09.287717" elapsed="0.645255"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${AllLinksCount}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-05-12T13:43:20.508043" elapsed="0.000000"/>
+<status status="PASS" start="2024-05-12T21:10:09.932972" elapsed="0.000000"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
-<msg time="2024-05-12T13:43:20.508043" level="INFO">@{LinkItems} = [ ]</msg>
+<msg time="2024-05-12T21:10:09.932972" level="INFO">@{LinkItems} = [ ]</msg>
 <var>@{LinkItems}</var>
 <doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2024-05-12T13:43:20.508043" elapsed="0.000000"/>
+<status status="PASS" start="2024-05-12T21:10:09.932972" elapsed="0.000000"/>
 </kw>
 <for flavor="IN RANGE">
 <iter>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2024-05-12T13:43:20.564246" level="INFO">${linktext} = </msg>
+<msg time="2024-05-12T21:10:10.972630" level="INFO">${linktext} = </msg>
 <var>${linktext}</var>
 <arg>(//a)[${i}]</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-12T13:43:20.508043" elapsed="0.056203"/>
+<status status="PASS" start="2024-05-12T21:10:09.932972" elapsed="1.039658"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
-<msg time="2024-05-12T13:43:20.565245" level="FAIL">Evaluating expression '=!' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</msg>
-<arg>${linktext}=!</arg>
-<arg>Should Not Be Empty</arg>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="FAIL" start="2024-05-12T13:43:20.565245" elapsed="0.001000">Evaluating expression '=!' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+<status status="PASS" start="2024-05-12T21:10:10.972630" elapsed="0.000000"/>
 </kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2024-05-12T21:10:09.932972" elapsed="1.039658"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:12.002343" level="INFO">${linktext} = Demo Site</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:10.972630" elapsed="1.029713"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${linktext}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2024-05-12T13:43:20.566245" elapsed="0.000000"/>
+<status status="PASS" start="2024-05-12T21:10:12.002343" elapsed="0.000000"/>
 </kw>
-<var name="${i}">1</var>
-<status status="FAIL" start="2024-05-12T13:43:20.508043" elapsed="0.058202">Evaluating expression '=!' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:12.002343" elapsed="0.000000"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2024-05-12T21:10:10.972630" elapsed="1.029713"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:13.032432" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:12.002343" elapsed="1.030089"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:13.032432" elapsed="0.000000"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2024-05-12T21:10:12.002343" elapsed="1.030089"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:14.063313" level="INFO">${linktext} = Testing</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:13.032432" elapsed="1.030881"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:10:14.063313" elapsed="0.000000"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:14.063313" elapsed="0.000000"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2024-05-12T21:10:13.032432" elapsed="1.030881"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:15.106375" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:14.063313" elapsed="1.043062"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:15.106375" elapsed="0.001013"/>
+</kw>
+<var name="${i}">5</var>
+<status status="PASS" start="2024-05-12T21:10:14.063313" elapsed="1.044075"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:16.139454" level="INFO">${linktext} = Selenium</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:15.108094" elapsed="1.031360"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:10:16.139454" elapsed="0.000972"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:16.139454" elapsed="0.000972"/>
+</kw>
+<var name="${i}">6</var>
+<status status="PASS" start="2024-05-12T21:10:15.108094" elapsed="1.032332"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:17.172380" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:16.140426" elapsed="1.031954"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:17.172380" elapsed="0.000000"/>
+</kw>
+<var name="${i}">7</var>
+<status status="PASS" start="2024-05-12T21:10:16.140426" elapsed="1.031954"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:18.209121" level="INFO">${linktext} = Live Project</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:17.172380" elapsed="1.036741"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:10:18.209121" elapsed="0.000000"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:18.209121" elapsed="0.000000"/>
+</kw>
+<var name="${i}">8</var>
+<status status="PASS" start="2024-05-12T21:10:17.172380" elapsed="1.036741"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:19.242795" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:18.209121" elapsed="1.033674"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:19.242795" elapsed="0.000000"/>
+</kw>
+<var name="${i}">9</var>
+<status status="PASS" start="2024-05-12T21:10:18.209121" elapsed="1.033674"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:20.272846" level="INFO">${linktext} = Java</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:19.243809" elapsed="1.029037"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:10:20.272846" elapsed="0.000000"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:20.272846" elapsed="0.000000"/>
+</kw>
+<var name="${i}">10</var>
+<status status="PASS" start="2024-05-12T21:10:19.242795" elapsed="1.030051"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:21.303774" level="INFO">${linktext} = Selenium</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:20.272846" elapsed="1.030928"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:10:21.303774" elapsed="0.000000"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:21.303774" elapsed="0.000000"/>
+</kw>
+<var name="${i}">11</var>
+<status status="PASS" start="2024-05-12T21:10:20.272846" elapsed="1.030928"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:22.333739" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:21.303774" elapsed="1.029965"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:22.333739" elapsed="0.000000"/>
+</kw>
+<var name="${i}">12</var>
+<status status="PASS" start="2024-05-12T21:10:21.303774" elapsed="1.029965"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:23.362988" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:22.333739" elapsed="1.029249"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:23.362988" elapsed="0.000000"/>
+</kw>
+<var name="${i}">13</var>
+<status status="PASS" start="2024-05-12T21:10:22.333739" elapsed="1.029249"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:24.392064" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:23.362988" elapsed="1.029076"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:24.392064" elapsed="0.001015"/>
+</kw>
+<var name="${i}">14</var>
+<status status="PASS" start="2024-05-12T21:10:23.362988" elapsed="1.030533"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:25.423039" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:24.393521" elapsed="1.029518"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:25.423039" elapsed="0.000000"/>
+</kw>
+<var name="${i}">15</var>
+<status status="PASS" start="2024-05-12T21:10:24.393521" elapsed="1.029518"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:26.452260" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:25.423039" elapsed="1.029221"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:26.452260" elapsed="0.000777"/>
+</kw>
+<var name="${i}">16</var>
+<status status="PASS" start="2024-05-12T21:10:25.423039" elapsed="1.029998"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:27.511722" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:26.453037" elapsed="1.058685"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:27.511722" elapsed="0.000000"/>
+</kw>
+<var name="${i}">17</var>
+<status status="PASS" start="2024-05-12T21:10:26.453037" elapsed="1.059517"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:28.540948" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:27.512554" elapsed="1.028394"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:28.540948" elapsed="0.000000"/>
+</kw>
+<var name="${i}">18</var>
+<status status="PASS" start="2024-05-12T21:10:27.512554" elapsed="1.028394"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:29.572595" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:28.540948" elapsed="1.031647"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:29.572595" elapsed="0.000000"/>
+</kw>
+<var name="${i}">19</var>
+<status status="PASS" start="2024-05-12T21:10:28.540948" elapsed="1.031647"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:30.603675" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:29.573598" elapsed="1.030077"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:30.603675" elapsed="0.000000"/>
+</kw>
+<var name="${i}">20</var>
+<status status="PASS" start="2024-05-12T21:10:29.572595" elapsed="1.031080"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:31.633046" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:30.604673" elapsed="1.028373"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:31.633046" elapsed="0.000000"/>
+</kw>
+<var name="${i}">21</var>
+<status status="PASS" start="2024-05-12T21:10:30.603675" elapsed="1.029371"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:32.661691" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:31.633046" elapsed="1.028645"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:32.661691" elapsed="0.000000"/>
+</kw>
+<var name="${i}">22</var>
+<status status="PASS" start="2024-05-12T21:10:31.633046" elapsed="1.028645"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:33.689822" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:32.661691" elapsed="1.028131"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:33.689822" elapsed="0.000000"/>
+</kw>
+<var name="${i}">23</var>
+<status status="PASS" start="2024-05-12T21:10:32.661691" elapsed="1.028131"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:34.718375" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:33.689822" elapsed="1.028553"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:34.718375" elapsed="0.000000"/>
+</kw>
+<var name="${i}">24</var>
+<status status="PASS" start="2024-05-12T21:10:33.689822" elapsed="1.028553"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:35.747591" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:34.718375" elapsed="1.029216"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:35.748309" elapsed="0.000168"/>
+</kw>
+<var name="${i}">25</var>
+<status status="PASS" start="2024-05-12T21:10:34.718375" elapsed="1.030102"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:36.779584" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:35.748477" elapsed="1.031107"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:36.779584" elapsed="0.000000"/>
+</kw>
+<var name="${i}">26</var>
+<status status="PASS" start="2024-05-12T21:10:35.748477" elapsed="1.031107"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:37.810670" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:36.779584" elapsed="1.031086"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:37.810670" elapsed="0.000000"/>
+</kw>
+<var name="${i}">27</var>
+<status status="PASS" start="2024-05-12T21:10:36.779584" elapsed="1.031086"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:38.840711" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:37.810670" elapsed="1.030041"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:38.840711" elapsed="0.000000"/>
+</kw>
+<var name="${i}">28</var>
+<status status="PASS" start="2024-05-12T21:10:37.810670" elapsed="1.030041"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:39.870598" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:38.840711" elapsed="1.029887"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:39.870598" elapsed="0.000000"/>
+</kw>
+<var name="${i}">29</var>
+<status status="PASS" start="2024-05-12T21:10:38.840711" elapsed="1.029887"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:40.900174" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:39.870598" elapsed="1.029576"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:40.900174" elapsed="0.000000"/>
+</kw>
+<var name="${i}">30</var>
+<status status="PASS" start="2024-05-12T21:10:39.870598" elapsed="1.029576"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:41.929702" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:40.900174" elapsed="1.029528"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:41.929702" elapsed="0.000000"/>
+</kw>
+<var name="${i}">31</var>
+<status status="PASS" start="2024-05-12T21:10:40.900174" elapsed="1.029528"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:42.959877" level="INFO">${linktext} = Insurance Project</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:41.929702" elapsed="1.030175"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:10:42.959877" elapsed="0.000000"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:42.959877" elapsed="0.000000"/>
+</kw>
+<var name="${i}">32</var>
+<status status="PASS" start="2024-05-12T21:10:41.929702" elapsed="1.030175"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:43.990597" level="INFO">${linktext} = Agile Project</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:42.959877" elapsed="1.030720"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:10:43.990597" elapsed="0.000000"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:43.990597" elapsed="0.000000"/>
+</kw>
+<var name="${i}">33</var>
+<status status="PASS" start="2024-05-12T21:10:42.959877" elapsed="1.030720"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:45.020423" level="INFO">${linktext} = Bank Project</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:43.990597" elapsed="1.029826"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:10:45.020423" elapsed="0.000000"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:45.020423" elapsed="0.000000"/>
+</kw>
+<var name="${i}">34</var>
+<status status="PASS" start="2024-05-12T21:10:43.990597" elapsed="1.029826"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:46.050443" level="INFO">${linktext} = Security Project</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:45.020423" elapsed="1.030020"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:10:46.050443" elapsed="0.000000"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:46.050443" elapsed="0.000000"/>
+</kw>
+<var name="${i}">35</var>
+<status status="PASS" start="2024-05-12T21:10:45.020423" elapsed="1.030020"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:47.082190" level="INFO">${linktext} = Telecom Project</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:46.050443" elapsed="1.031747"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:10:47.082190" elapsed="0.000000"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:47.082190" elapsed="0.000000"/>
+</kw>
+<var name="${i}">36</var>
+<status status="PASS" start="2024-05-12T21:10:46.050443" elapsed="1.031747"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:48.111886" level="INFO">${linktext} = Payment Gateway Project</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:47.082190" elapsed="1.029696"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:10:48.111886" elapsed="0.000000"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:48.111886" elapsed="0.000000"/>
+</kw>
+<var name="${i}">37</var>
+<status status="PASS" start="2024-05-12T21:10:47.082190" elapsed="1.029696"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:49.141719" level="INFO">${linktext} = New Tours</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:48.111886" elapsed="1.029833"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:10:49.141719" elapsed="0.000000"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:49.141719" elapsed="0.000000"/>
+</kw>
+<var name="${i}">38</var>
+<status status="PASS" start="2024-05-12T21:10:48.111886" elapsed="1.029833"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:50.172361" level="INFO">${linktext} = SEO</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:49.141719" elapsed="1.030642"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:10:50.172361" elapsed="0.000000"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:50.172361" elapsed="0.000000"/>
+</kw>
+<var name="${i}">39</var>
+<status status="PASS" start="2024-05-12T21:10:49.141719" elapsed="1.030642"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:51.202611" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:50.172361" elapsed="1.030250"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:51.202611" elapsed="0.000000"/>
+</kw>
+<var name="${i}">40</var>
+<status status="PASS" start="2024-05-12T21:10:50.172361" elapsed="1.030250"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:52.231666" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:51.202611" elapsed="1.029055"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:52.231666" elapsed="0.000000"/>
+</kw>
+<var name="${i}">41</var>
+<status status="PASS" start="2024-05-12T21:10:51.202611" elapsed="1.029055"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:53.261041" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:52.231666" elapsed="1.029375"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:53.261041" elapsed="0.000000"/>
+</kw>
+<var name="${i}">42</var>
+<status status="PASS" start="2024-05-12T21:10:52.231666" elapsed="1.029375"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:54.291834" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:53.261041" elapsed="1.030793"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:54.291834" elapsed="0.000000"/>
+</kw>
+<var name="${i}">43</var>
+<status status="PASS" start="2024-05-12T21:10:53.261041" elapsed="1.030793"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:55.321878" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:54.292834" elapsed="1.029044"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:55.321878" elapsed="0.000000"/>
+</kw>
+<var name="${i}">44</var>
+<status status="PASS" start="2024-05-12T21:10:54.292834" elapsed="1.029044"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:56.351215" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:55.321878" elapsed="1.029337"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:56.351215" elapsed="0.000000"/>
+</kw>
+<var name="${i}">45</var>
+<status status="PASS" start="2024-05-12T21:10:55.321878" elapsed="1.029337"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:57.381576" level="INFO">${linktext} = Home</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:56.351215" elapsed="1.030361"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:10:57.381576" elapsed="0.000000"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:57.381576" elapsed="0.000000"/>
+</kw>
+<var name="${i}">46</var>
+<status status="PASS" start="2024-05-12T21:10:56.351215" elapsed="1.030361"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:58.412935" level="INFO">${linktext} = Flights</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:57.381576" elapsed="1.031359"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:10:58.412935" elapsed="0.000000"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:58.412935" elapsed="0.000000"/>
+</kw>
+<var name="${i}">47</var>
+<status status="PASS" start="2024-05-12T21:10:57.381576" elapsed="1.031359"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:10:59.444379" level="INFO">${linktext} = Hotels</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:58.412935" elapsed="1.031444"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:10:59.444379" elapsed="0.001787"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:10:59.444379" elapsed="0.001787"/>
+</kw>
+<var name="${i}">48</var>
+<status status="PASS" start="2024-05-12T21:10:58.412935" elapsed="1.033231"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:11:00.476898" level="INFO">${linktext} = Car Rentals</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:10:59.448351" elapsed="1.028547"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:11:00.476898" elapsed="0.000000"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:11:00.476898" elapsed="0.001415"/>
+</kw>
+<var name="${i}">49</var>
+<status status="PASS" start="2024-05-12T21:10:59.446166" elapsed="1.032147"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:11:01.512588" level="INFO">${linktext} = Cruises</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:11:00.480001" elapsed="1.032587"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:11:01.512588" elapsed="0.000000"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:11:01.512588" elapsed="0.000000"/>
+</kw>
+<var name="${i}">50</var>
+<status status="PASS" start="2024-05-12T21:11:00.478313" elapsed="1.034275"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:11:02.542813" level="INFO">${linktext} = Destinations</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:11:01.512588" elapsed="1.030225"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:11:02.542813" elapsed="0.001007"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:11:02.542813" elapsed="0.001007"/>
+</kw>
+<var name="${i}">51</var>
+<status status="PASS" start="2024-05-12T21:11:01.512588" elapsed="1.031232"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:11:03.575206" level="INFO">${linktext} = Vacations</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:11:02.543820" elapsed="1.031386"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:11:03.575206" elapsed="0.001004"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:11:03.575206" elapsed="0.001004"/>
+</kw>
+<var name="${i}">52</var>
+<status status="PASS" start="2024-05-12T21:11:02.543820" elapsed="1.032390"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:11:04.607408" level="INFO">${linktext} = SIGN-ON</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:11:03.577208" elapsed="1.030200"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:11:04.607408" elapsed="0.001016"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:11:04.607408" elapsed="0.001016"/>
+</kw>
+<var name="${i}">53</var>
+<status status="PASS" start="2024-05-12T21:11:03.577208" elapsed="1.031216"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:11:05.639339" level="INFO">${linktext} = REGISTER</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:11:04.608424" elapsed="1.030915"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:11:05.639339" elapsed="0.000000"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:11:05.639339" elapsed="0.000000"/>
+</kw>
+<var name="${i}">54</var>
+<status status="PASS" start="2024-05-12T21:11:04.608424" elapsed="1.030915"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:11:06.671194" level="INFO">${linktext} = SUPPORT</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:11:05.639339" elapsed="1.031855"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:11:06.672161" elapsed="0.000000"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:11:06.671194" elapsed="0.000967"/>
+</kw>
+<var name="${i}">55</var>
+<status status="PASS" start="2024-05-12T21:11:05.639339" elapsed="1.032822"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:11:07.702319" level="INFO">${linktext} = CONTACT</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:11:06.673159" elapsed="1.029160"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:11:07.702319" elapsed="0.001051"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:11:07.702319" elapsed="0.001051"/>
+</kw>
+<var name="${i}">56</var>
+<status status="PASS" start="2024-05-12T21:11:06.673159" elapsed="1.030211"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:11:08.737118" level="INFO">${linktext} = your destination</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:11:07.704332" elapsed="1.032786"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:11:08.737118" elapsed="0.000000"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:11:08.737118" elapsed="0.000000"/>
+</kw>
+<var name="${i}">57</var>
+<status status="PASS" start="2024-05-12T21:11:07.703370" elapsed="1.033748"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:11:09.770647" level="INFO">${linktext} = featured vacation destinations</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:11:08.737118" elapsed="1.033529"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:11:09.770647" elapsed="0.000000"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:11:09.770647" elapsed="0.000000"/>
+</kw>
+<var name="${i}">58</var>
+<status status="PASS" start="2024-05-12T21:11:08.737118" elapsed="1.033529"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:11:10.803815" level="INFO">${linktext} = Register here</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:11:09.770647" elapsed="1.033168"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:11:10.803815" elapsed="0.000000"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:11:10.803815" elapsed="0.000000"/>
+</kw>
+<var name="${i}">59</var>
+<status status="PASS" start="2024-05-12T21:11:09.770647" elapsed="1.033168"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T21:11:11.837132" level="INFO">${linktext} = Business Travel @ About.com</msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T21:11:10.803815" elapsed="1.033317"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T21:11:11.837957" elapsed="0.000365"/>
+</kw>
+<arg>'${linktext}' != ''</arg>
+<arg>Log To Console</arg>
+<arg>${linktext}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-12T21:11:11.837132" elapsed="0.001190"/>
+</kw>
+<var name="${i}">60</var>
+<status status="PASS" start="2024-05-12T21:11:10.803815" elapsed="1.034507"/>
 </iter>
 <var>${i}</var>
 <value>1</value>
 <value>${AllLinksCount}</value>
-<status status="FAIL" start="2024-05-12T13:43:20.508043" elapsed="0.059201">Evaluating expression '=!' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+<status status="PASS" start="2024-05-12T21:10:09.932972" elapsed="61.905350"/>
 </for>
-<status status="FAIL" start="2024-05-12T13:43:17.219485" elapsed="3.347759">Evaluating expression '=!' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+<status status="PASS" start="2024-05-12T21:10:05.054607" elapsed="66.784743"/>
 </test>
-<status status="FAIL" start="2024-05-12T13:43:16.985091" elapsed="3.585154"/>
+<status status="PASS" start="2024-05-12T21:10:04.804614" elapsed="67.036733"/>
 </suite>
-<status status="FAIL" start="2024-05-12T13:43:16.985091" elapsed="3.589485"/>
+<status status="PASS" start="2024-05-12T21:10:04.804614" elapsed="67.039736"/>
 </suite>
-<status status="FAIL" start="2024-05-12T13:43:16.953838" elapsed="3.620738"/>
+<status status="PASS" start="2024-05-12T21:10:04.773361" elapsed="67.075107"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="RobotFrameworkPractice">RobotFrameworkPractice</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1" name="RobotPractice">RobotFrameworkPractice.RobotPractice</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="GetAllLinks">RobotFrameworkPractice.RobotPractice.GetAllLinks</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="RobotFrameworkPractice">RobotFrameworkPractice</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="RobotPractice">RobotFrameworkPractice.RobotPractice</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="GetAllLinks">RobotFrameworkPractice.RobotPractice.GetAllLinks</stat>
 </suite>
 </statistics>
 <errors>

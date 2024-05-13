@@ -11,8 +11,8 @@ ${url}    https://demo.nopcommerce.com/login
 TC1
     #user define keyword without arguements
     Set Selenium Speed    1
-    ${Pagetitle}=    launcherbrowser    ${url}    ${browser}
-    Log To Console    ${Pagetitle}
+    ${pagetitle}=    Launcherbrowser    ${url}    ${browser}
+    Log To Console    ${pagetitle}
     Input Text    //input[@id='Email']    Prajapati@gmail.com
     Input Text    //input[@id='Password']    ABC@123
 
