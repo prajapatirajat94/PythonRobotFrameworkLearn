@@ -1,60 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.11.0 on win32)" generated="2024-05-11T11:54:32.719413" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.11.0 on win32)" generated="2024-05-12T13:43:16.938225" rpa="false" schemaversion="5">
 <suite id="s1" name="RobotFrameworkPractice" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice">
 <suite id="s1-s1" name="RobotPractice" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice\RobotPractice">
-<suite id="s1-s1-s1" name="HandleTabbedWindows" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice\RobotPractice\HandleTabbedWindows.robot">
-<test id="s1-s1-s1-t1" name="TabbedWindowTestCase" line="11">
-<kw name="Set Selenium Speed" owner="SeleniumLibrary">
-<arg>1</arg>
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2024-05-11T11:54:33.000618" elapsed="0.000000"/>
-</kw>
+<suite id="s1-s1-s1" name="GetAllLinks" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice\RobotPractice\GetAllLinks.robot">
+<test id="s1-s1-s1-t1" name="TESTLINK" line="9">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-05-11T11:54:33.000618" level="INFO">Opening browser 'chrome' to base url 'https://demo.automationtesting.in/Windows.html'.</msg>
+<msg time="2024-05-12T13:43:17.219485" level="INFO">Opening browser 'chrome' to base url 'https://demo.guru99.com/test/newtours/'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-05-11T11:54:33.000618" elapsed="6.752927"/>
+<status status="PASS" start="2024-05-12T13:43:17.219485" elapsed="3.261913"/>
 </kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-05-11T11:54:39.753545" level="INFO">Clicking button '//a[@href='http://www.selenium.dev']//button[@class='btn btn-info'][normalize-space()='click']'.</msg>
-<arg>//a[@href='http://www.selenium.dev']//button[@class='btn btn-info'][normalize-space()='click']</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-11T11:54:39.753545" elapsed="5.210407"/>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2024-05-12T13:43:20.508043" level="INFO">${AllLinksCount} = 61</msg>
+<var>${AllLinksCount}</var>
+<arg>//a</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2024-05-12T13:43:20.481398" elapsed="0.026645"/>
 </kw>
-<kw name="Switch Window" owner="SeleniumLibrary">
-<msg time="2024-05-11T11:55:00.222523" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-05-11T11:55:00.222523" level="FAIL">No window matching handle, name, title or URL 'Seleniu' found.</msg>
-<arg>Seleniu</arg>
-<doc>Switches to browser window matching ``locator``.</doc>
-<status status="FAIL" start="2024-05-11T11:54:44.963952" elapsed="15.258571">No window matching handle, name, title or URL 'Seleniu' found.</status>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${AllLinksCount}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-12T13:43:20.508043" elapsed="0.000000"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>//span[normalize-space()='Downloads']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-05-11T11:55:00.222523" elapsed="0.000000"/>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-05-12T13:43:20.508043" level="INFO">@{LinkItems} = [ ]</msg>
+<var>@{LinkItems}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-05-12T13:43:20.508043" elapsed="0.000000"/>
 </kw>
-<kw name="Switch Window" owner="SeleniumLibrary">
-<arg>Frames &amp; windows</arg>
-<doc>Switches to browser window matching ``locator``.</doc>
-<status status="NOT RUN" start="2024-05-11T11:55:00.222523" elapsed="0.000000"/>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-12T13:43:20.564246" level="INFO">${linktext} = </msg>
+<var>${linktext}</var>
+<arg>(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-12T13:43:20.508043" elapsed="0.056203"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>//a[normalize-space()='Open New Seperate Windows']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-05-11T11:55:00.222523" elapsed="0.000000"/>
+<kw name="Run Keyword If" owner="BuiltIn">
+<msg time="2024-05-12T13:43:20.565245" level="FAIL">Evaluating expression '=!' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</msg>
+<arg>${linktext}=!</arg>
+<arg>Should Not Be Empty</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="FAIL" start="2024-05-12T13:43:20.565245" elapsed="0.001000">Evaluating expression '=!' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
 </kw>
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="NOT RUN" start="2024-05-11T11:55:00.222523" elapsed="0.000000"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${linktext}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-05-12T13:43:20.566245" elapsed="0.000000"/>
 </kw>
-<status status="FAIL" start="2024-05-11T11:54:33.000618" elapsed="27.221905">No window matching handle, name, title or URL 'Seleniu' found.</status>
+<var name="${i}">1</var>
+<status status="FAIL" start="2024-05-12T13:43:20.508043" elapsed="0.058202">Evaluating expression '=!' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</iter>
+<var>${i}</var>
+<value>1</value>
+<value>${AllLinksCount}</value>
+<status status="FAIL" start="2024-05-12T13:43:20.508043" elapsed="0.059201">Evaluating expression '=!' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</for>
+<status status="FAIL" start="2024-05-12T13:43:17.219485" elapsed="3.347759">Evaluating expression '=!' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
 </test>
-<status status="FAIL" start="2024-05-11T11:54:32.750646" elapsed="27.471877"/>
+<status status="FAIL" start="2024-05-12T13:43:16.985091" elapsed="3.585154"/>
 </suite>
-<status status="FAIL" start="2024-05-11T11:54:32.750646" elapsed="27.471877"/>
+<status status="FAIL" start="2024-05-12T13:43:16.985091" elapsed="3.589485"/>
 </suite>
-<status status="FAIL" start="2024-05-11T11:54:32.719413" elapsed="27.518772"/>
+<status status="FAIL" start="2024-05-12T13:43:16.953838" elapsed="3.620738"/>
 </suite>
 <statistics>
 <total>
@@ -65,7 +75,7 @@
 <suite>
 <stat pass="0" fail="1" skip="0" id="s1" name="RobotFrameworkPractice">RobotFrameworkPractice</stat>
 <stat pass="0" fail="1" skip="0" id="s1-s1" name="RobotPractice">RobotFrameworkPractice.RobotPractice</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="HandleTabbedWindows">RobotFrameworkPractice.RobotPractice.HandleTabbedWindows</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="GetAllLinks">RobotFrameworkPractice.RobotPractice.GetAllLinks</stat>
 </suite>
 </statistics>
 <errors>
