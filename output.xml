@@ -1,97 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.11.0 on win32)" generated="2024-05-13T21:33:06.962920" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.11.0 on win32)" generated="2024-05-16T22:02:37.748116" rpa="false" schemaversion="5">
 <suite id="s1" name="RobotFrameworkPractice" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice">
 <suite id="s1-s1" name="RobotPractice" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice\RobotPractice">
-<suite id="s1-s1-s1" name="WebtableHandle" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice\RobotPractice\WebtableHandle.robot">
-<test id="s1-s1-s1-t1" name="WebtableTestcase" line="9">
-<kw name="Set Selenium Speed" owner="SeleniumLibrary">
-<arg>1</arg>
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2024-05-13T21:33:07.244172" elapsed="0.000000"/>
-</kw>
+<suite id="s1-s1-s1" name="RegisterProduct" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice\RobotPractice\RegisterProduct.robot">
+<test id="s1-s1-s1-t1" name="Registerusertest" line="6">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-05-13T21:33:07.244172" level="INFO">Opening browser 'chrome' to base url 'https://testautomationpractice.blogspot.com/'.</msg>
-<arg>${url}</arg>
-<arg>${browser}</arg>
+<msg time="2024-05-16T22:02:38.047489" level="INFO">Opening browser 'chrome' to base url 'https://demo.nopcommerce.com/register'.</msg>
+<arg>https://demo.nopcommerce.com/register</arg>
+<arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-05-13T21:33:07.244172" elapsed="4.455632"/>
+<status status="PASS" start="2024-05-16T22:02:38.046418" elapsed="2.821790"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-05-13T21:33:11.699804" elapsed="1.036346"/>
+<status status="PASS" start="2024-05-16T22:02:40.884207" elapsed="0.062996"/>
 </kw>
-<kw name="Get Element Count" owner="SeleniumLibrary">
-<msg time="2024-05-13T21:33:13.756762" level="INFO">${row} = 6</msg>
-<var>${row}</var>
-<arg>//table[@name='BookTable']/tbody/tr/td[2]</arg>
-<doc>Returns the number of elements matching ``locator``.</doc>
-<status status="PASS" start="2024-05-13T21:33:12.736150" elapsed="1.020612"/>
+<kw name="Select Radio Button" owner="SeleniumLibrary">
+<msg time="2024-05-16T22:02:40.949205" level="INFO">Selecting 'M' from radio button 'Gender'.</msg>
+<arg>Gender</arg>
+<arg>M</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<status status="PASS" start="2024-05-16T22:02:40.948207" elapsed="0.286995"/>
 </kw>
-<kw name="Get Element Count" owner="SeleniumLibrary">
-<msg time="2024-05-13T21:33:14.773729" level="INFO">${column} = 4</msg>
-<var>${column}</var>
-<arg>//table[@name='BookTable']/tbody/tr/th</arg>
-<doc>Returns the number of elements matching ``locator``.</doc>
-<status status="PASS" start="2024-05-13T21:33:13.756762" elapsed="1.016967"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-16T22:02:41.236201" level="INFO">Typing text 'Rajat' into text field '//input[@id='FirstName']'.</msg>
+<arg>//input[@id='FirstName']</arg>
+<arg>Rajat</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-16T22:02:41.236201" elapsed="0.141019"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${row}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-05-13T21:33:14.773729" elapsed="0.000000"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-16T22:02:41.378204" level="INFO">Typing text 'prajapati' into text field '//input[@id='LastName']'.</msg>
+<arg>//input[@id='LastName']</arg>
+<arg>prajapati</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-16T22:02:41.378204" elapsed="0.139999"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${column}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-05-13T21:33:14.773729" elapsed="0.000000"/>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2024-05-16T22:02:41.519204" level="INFO">Selecting options from selection list '//select[@name='DateOfBirthDay']' by value 10.</msg>
+<arg>//select[@name='DateOfBirthDay']</arg>
+<arg>10</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2024-05-16T22:02:41.518203" elapsed="0.109062"/>
 </kw>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2024-05-13T21:33:16.814624" level="INFO">${text} = Learn Selenium</msg>
-<var>${text}</var>
-<arg>//table[@name='BookTable']/tbody/tr[2]/td[1]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-13T21:33:14.773729" elapsed="2.040895"/>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2024-05-16T22:02:41.628204" level="INFO">Selecting options from selection list '//select[@name='DateOfBirthMonth']' by value 6.</msg>
+<arg>//select[@name='DateOfBirthMonth']</arg>
+<arg>6</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2024-05-16T22:02:41.628204" elapsed="0.093002"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-05-13T21:33:16.814624" elapsed="0.000000"/>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2024-05-16T22:02:41.722204" level="INFO">Selecting options from selection list '//select[@name='DateOfBirthYear']' by value 1990.</msg>
+<arg>//select[@name='DateOfBirthYear']</arg>
+<arg>1990</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2024-05-16T22:02:41.721206" elapsed="0.097736"/>
 </kw>
-<kw name="Table Column Should Contain" owner="SeleniumLibrary">
-<arg>//table[@name='BookTable']</arg>
-<arg>2</arg>
-<arg>Author</arg>
-<doc>Verifies table column contains text ``expected``.</doc>
-<status status="PASS" start="2024-05-13T21:33:16.814624" elapsed="4.433863"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-16T22:02:41.819944" level="INFO">Typing text 'ABCD@gmail.com' into text field '//input[@id='Email']'.</msg>
+<arg>//input[@id='Email']</arg>
+<arg>ABCD@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-16T22:02:41.819944" elapsed="0.176915"/>
 </kw>
-<kw name="Table Row Should Contain" owner="SeleniumLibrary">
-<arg>//table[@name='BookTable']</arg>
-<arg>4</arg>
-<arg>Learn JS</arg>
-<doc>Verifies that table row contains text ``expected``.</doc>
-<status status="PASS" start="2024-05-13T21:33:21.248487" elapsed="4.073791"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-16T22:02:41.997855" level="INFO">Typing text 'ABC1234' into text field '//input[@id='Password']'.</msg>
+<arg>//input[@id='Password']</arg>
+<arg>ABC1234</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-16T22:02:41.997855" elapsed="0.144002"/>
 </kw>
-<kw name="Table Cell Should Contain" owner="SeleniumLibrary">
-<msg time="2024-05-13T21:33:31.415873" level="INFO">Table cell contains 'Mukesh'.</msg>
-<arg>//table[@name='BookTable']</arg>
-<arg>3</arg>
-<arg>2</arg>
-<arg>Mukesh</arg>
-<doc>Verifies table cell contains text ``expected``.</doc>
-<status status="PASS" start="2024-05-13T21:33:25.322278" elapsed="6.093595"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-16T22:02:42.142858" level="INFO">Typing text 'ABC1234' into text field '//input[@id='ConfirmPassword']'.</msg>
+<arg>//input[@id='ConfirmPassword']</arg>
+<arg>ABC1234</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-16T22:02:42.141857" elapsed="0.152019"/>
 </kw>
-<kw name="Table Header Should Contain" owner="SeleniumLibrary">
-<arg>//table[@name='BookTable']</arg>
-<arg>Author</arg>
-<doc>Verifies table header contains text ``expected``.</doc>
-<status status="PASS" start="2024-05-13T21:33:31.416463" elapsed="6.084051"/>
-</kw>
-<status status="PASS" start="2024-05-13T21:33:07.244172" elapsed="30.256492"/>
+<status status="PASS" start="2024-05-16T22:02:38.045866" elapsed="4.248995"/>
 </test>
-<status status="PASS" start="2024-05-13T21:33:07.009759" elapsed="30.493902"/>
+<status status="PASS" start="2024-05-16T22:02:37.788080" elapsed="4.508776"/>
 </suite>
-<status status="PASS" start="2024-05-13T21:33:06.994172" elapsed="30.511486"/>
+<status status="PASS" start="2024-05-16T22:02:37.784084" elapsed="4.515777"/>
 </suite>
-<status status="PASS" start="2024-05-13T21:33:06.962920" elapsed="30.544741"/>
+<status status="PASS" start="2024-05-16T22:02:37.751126" elapsed="4.551729"/>
 </suite>
 <statistics>
 <total>
@@ -102,7 +95,7 @@
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="RobotFrameworkPractice">RobotFrameworkPractice</stat>
 <stat pass="1" fail="0" skip="0" id="s1-s1" name="RobotPractice">RobotFrameworkPractice.RobotPractice</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="WebtableHandle">RobotFrameworkPractice.RobotPractice.WebtableHandle</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="RegisterProduct">RobotFrameworkPractice.RobotPractice.RegisterProduct</stat>
 </suite>
 </statistics>
 <errors>
