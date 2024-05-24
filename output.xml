@@ -1,101 +1,242 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.11.0 on win32)" generated="2024-05-16T22:02:37.748116" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.11.0 on win32)" generated="2024-05-23T21:30:06.088331" rpa="false" schemaversion="5">
 <suite id="s1" name="RobotFrameworkPractice" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice">
 <suite id="s1-s1" name="RobotPractice" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice\RobotPractice">
-<suite id="s1-s1-s1" name="RegisterProduct" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice\RobotPractice\RegisterProduct.robot">
-<test id="s1-s1-s1-t1" name="Registerusertest" line="6">
+<suite id="s1-s1-s1" name="ParameterizeTest" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice\RobotPractice\ParameterizeTest.robot">
+<kw name="OpeningBrowser" owner="ParameterizeResource" type="SETUP">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-05-23T21:30:06.385231" elapsed="0.000000"/>
+</kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-05-16T22:02:38.047489" level="INFO">Opening browser 'chrome' to base url 'https://demo.nopcommerce.com/register'.</msg>
-<arg>https://demo.nopcommerce.com/register</arg>
-<arg>chrome</arg>
+<msg time="2024-05-23T21:30:06.385231" level="INFO">Opening browser 'chrome' to base url 'https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F'.</msg>
+<arg>${enterurl}</arg>
+<arg>${browsername}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-05-16T22:02:38.046418" elapsed="2.821790"/>
+<status status="PASS" start="2024-05-23T21:30:06.385231" elapsed="3.295758"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-05-16T22:02:40.884207" elapsed="0.062996"/>
+<status status="PASS" start="2024-05-23T21:30:09.680989" elapsed="0.549526"/>
 </kw>
-<kw name="Select Radio Button" owner="SeleniumLibrary">
-<msg time="2024-05-16T22:02:40.949205" level="INFO">Selecting 'M' from radio button 'Gender'.</msg>
-<arg>Gender</arg>
-<arg>M</arg>
-<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
-<status status="PASS" start="2024-05-16T22:02:40.948207" elapsed="0.286995"/>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<status status="PASS" start="2024-05-23T21:30:06.369574" elapsed="3.860941"/>
 </kw>
+<test id="s1-s1-s1-t1" name="Entering username and password for TC1" line="14">
+<kw name="EnteringUSernameandPassword">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-05-16T22:02:41.236201" level="INFO">Typing text 'Rajat' into text field '//input[@id='FirstName']'.</msg>
-<arg>//input[@id='FirstName']</arg>
-<arg>Rajat</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-16T22:02:41.236201" elapsed="0.141019"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-05-16T22:02:41.378204" level="INFO">Typing text 'prajapati' into text field '//input[@id='LastName']'.</msg>
-<arg>//input[@id='LastName']</arg>
-<arg>prajapati</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-16T22:02:41.378204" elapsed="0.139999"/>
-</kw>
-<kw name="Select From List By Value" owner="SeleniumLibrary">
-<msg time="2024-05-16T22:02:41.519204" level="INFO">Selecting options from selection list '//select[@name='DateOfBirthDay']' by value 10.</msg>
-<arg>//select[@name='DateOfBirthDay']</arg>
-<arg>10</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="PASS" start="2024-05-16T22:02:41.518203" elapsed="0.109062"/>
-</kw>
-<kw name="Select From List By Value" owner="SeleniumLibrary">
-<msg time="2024-05-16T22:02:41.628204" level="INFO">Selecting options from selection list '//select[@name='DateOfBirthMonth']' by value 6.</msg>
-<arg>//select[@name='DateOfBirthMonth']</arg>
-<arg>6</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="PASS" start="2024-05-16T22:02:41.628204" elapsed="0.093002"/>
-</kw>
-<kw name="Select From List By Value" owner="SeleniumLibrary">
-<msg time="2024-05-16T22:02:41.722204" level="INFO">Selecting options from selection list '//select[@name='DateOfBirthYear']' by value 1990.</msg>
-<arg>//select[@name='DateOfBirthYear']</arg>
-<arg>1990</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="PASS" start="2024-05-16T22:02:41.721206" elapsed="0.097736"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-05-16T22:02:41.819944" level="INFO">Typing text 'ABCD@gmail.com' into text field '//input[@id='Email']'.</msg>
+<msg time="2024-05-23T21:30:10.230515" level="INFO">Typing text 'ABC@gmail.com' into text field '//input[@id='Email']'.</msg>
 <arg>//input[@id='Email']</arg>
-<arg>ABCD@gmail.com</arg>
+<arg>${enterusername}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-16T22:02:41.819944" elapsed="0.176915"/>
+<status status="PASS" start="2024-05-23T21:30:10.230515" elapsed="1.684880"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-05-16T22:02:41.997855" level="INFO">Typing text 'ABC1234' into text field '//input[@id='Password']'.</msg>
+<msg time="2024-05-23T21:30:11.915395" level="INFO">Typing text 'ABC' into text field '//input[@id='Password']'.</msg>
 <arg>//input[@id='Password']</arg>
-<arg>ABC1234</arg>
+<arg>${EnterPassword}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-16T22:02:41.997855" elapsed="0.144002"/>
+<status status="PASS" start="2024-05-23T21:30:11.915395" elapsed="1.664457"/>
+</kw>
+<kw name="ClickonLoginbutton" owner="ParameterizeResource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-23T21:30:13.579852" level="INFO">Clicking button '//button[normalize-space()='Log in']'.</msg>
+<arg>//button[normalize-space()='Log in']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-23T21:30:13.579852" elapsed="2.952211"/>
+</kw>
+<status status="PASS" start="2024-05-23T21:30:13.579852" elapsed="2.952211"/>
+</kw>
+<kw name="VerifyingErrorMessage" owner="ParameterizeResource">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-05-23T21:30:17.556258" level="INFO">Current page contains text 'Login was unsuccessful'.</msg>
+<arg>Login was unsuccessful</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-05-23T21:30:16.533092" elapsed="1.023166"/>
+</kw>
+<status status="PASS" start="2024-05-23T21:30:16.532063" elapsed="1.024195"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-05-23T21:30:17.556258" level="INFO">Opening url 'https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-05-23T21:30:17.556258" elapsed="0.705542"/>
+</kw>
+<arg>ABC@gmail.com</arg>
+<arg>ABC</arg>
+<status status="PASS" start="2024-05-23T21:30:10.230515" elapsed="8.031285"/>
+</kw>
+<status status="PASS" start="2024-05-23T21:30:10.230515" elapsed="8.031285"/>
+</test>
+<test id="s1-s1-s1-t2" name="Entering username and password for TC2" line="15">
+<kw name="EnteringUSernameandPassword">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-23T21:30:18.261800" level="INFO">Typing text 'DEF@gmail.com' into text field '//input[@id='Email']'.</msg>
+<arg>//input[@id='Email']</arg>
+<arg>${enterusername}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-23T21:30:18.261800" elapsed="1.699190"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-05-16T22:02:42.142858" level="INFO">Typing text 'ABC1234' into text field '//input[@id='ConfirmPassword']'.</msg>
-<arg>//input[@id='ConfirmPassword']</arg>
-<arg>ABC1234</arg>
+<msg time="2024-05-23T21:30:19.960990" level="INFO">Typing text 'ABC' into text field '//input[@id='Password']'.</msg>
+<arg>//input[@id='Password']</arg>
+<arg>${EnterPassword}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-16T22:02:42.141857" elapsed="0.152019"/>
+<status status="PASS" start="2024-05-23T21:30:19.960990" elapsed="1.646524"/>
 </kw>
-<status status="PASS" start="2024-05-16T22:02:38.045866" elapsed="4.248995"/>
+<kw name="ClickonLoginbutton" owner="ParameterizeResource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-23T21:30:21.607514" level="INFO">Clicking button '//button[normalize-space()='Log in']'.</msg>
+<arg>//button[normalize-space()='Log in']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-23T21:30:21.607514" elapsed="2.757001"/>
+</kw>
+<status status="PASS" start="2024-05-23T21:30:21.607514" elapsed="2.757001"/>
+</kw>
+<kw name="VerifyingErrorMessage" owner="ParameterizeResource">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-05-23T21:30:25.382973" level="INFO">Current page contains text 'Login was unsuccessful'.</msg>
+<arg>Login was unsuccessful</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-05-23T21:30:24.364515" elapsed="1.018458"/>
+</kw>
+<status status="PASS" start="2024-05-23T21:30:24.364515" elapsed="1.018458"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-05-23T21:30:25.382973" level="INFO">Opening url 'https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-05-23T21:30:25.382973" elapsed="0.676041"/>
+</kw>
+<arg>DEF@gmail.com</arg>
+<arg>ABC</arg>
+<status status="PASS" start="2024-05-23T21:30:18.261800" elapsed="7.797214"/>
+</kw>
+<status status="PASS" start="2024-05-23T21:30:18.261800" elapsed="7.797214"/>
 </test>
-<status status="PASS" start="2024-05-16T22:02:37.788080" elapsed="4.508776"/>
+<test id="s1-s1-s1-t3" name="Entering username and password for TC3" line="16">
+<kw name="EnteringUSernameandPassword">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-23T21:30:26.059014" level="INFO">Typing text 'GHI@gmail.com' into text field '//input[@id='Email']'.</msg>
+<arg>//input[@id='Email']</arg>
+<arg>${enterusername}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-23T21:30:26.059014" elapsed="1.655146"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-23T21:30:27.714160" level="INFO">Typing text 'ABC' into text field '//input[@id='Password']'.</msg>
+<arg>//input[@id='Password']</arg>
+<arg>${EnterPassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-23T21:30:27.714160" elapsed="1.635898"/>
+</kw>
+<kw name="ClickonLoginbutton" owner="ParameterizeResource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-23T21:30:29.350058" level="INFO">Clicking button '//button[normalize-space()='Log in']'.</msg>
+<arg>//button[normalize-space()='Log in']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-23T21:30:29.350058" elapsed="2.792899"/>
+</kw>
+<status status="PASS" start="2024-05-23T21:30:29.350058" elapsed="2.792899"/>
+</kw>
+<kw name="VerifyingErrorMessage" owner="ParameterizeResource">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-05-23T21:30:33.161522" level="INFO">Current page contains text 'Login was unsuccessful'.</msg>
+<arg>Login was unsuccessful</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-05-23T21:30:32.142957" elapsed="1.018565"/>
+</kw>
+<status status="PASS" start="2024-05-23T21:30:32.142957" elapsed="1.018565"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-05-23T21:30:33.161522" level="INFO">Opening url 'https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-05-23T21:30:33.161522" elapsed="0.748786"/>
+</kw>
+<arg>GHI@gmail.com</arg>
+<arg>ABC</arg>
+<status status="PASS" start="2024-05-23T21:30:26.059014" elapsed="7.851294"/>
+</kw>
+<status status="PASS" start="2024-05-23T21:30:26.059014" elapsed="7.851294"/>
+</test>
+<test id="s1-s1-s1-t4" name="Entering username and password for TC4" line="17">
+<kw name="EnteringUSernameandPassword">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-23T21:30:33.910308" level="INFO">Typing text 'JKL@gmail.com' into text field '//input[@id='Email']'.</msg>
+<arg>//input[@id='Email']</arg>
+<arg>${enterusername}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-23T21:30:33.910308" elapsed="1.659024"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-23T21:30:35.569332" level="INFO">Typing text '' into text field '//input[@id='Password']'.</msg>
+<arg>//input[@id='Password']</arg>
+<arg>${EnterPassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-23T21:30:35.569332" elapsed="1.624141"/>
+</kw>
+<kw name="ClickonLoginbutton" owner="ParameterizeResource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-23T21:30:37.193473" level="INFO">Clicking button '//button[normalize-space()='Log in']'.</msg>
+<arg>//button[normalize-space()='Log in']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-23T21:30:37.193473" elapsed="2.803622"/>
+</kw>
+<status status="PASS" start="2024-05-23T21:30:37.193473" elapsed="2.803622"/>
+</kw>
+<kw name="VerifyingErrorMessage" owner="ParameterizeResource">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-05-23T21:30:41.015073" level="INFO">Current page contains text 'Login was unsuccessful'.</msg>
+<arg>Login was unsuccessful</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-05-23T21:30:39.997095" elapsed="1.017978"/>
+</kw>
+<status status="PASS" start="2024-05-23T21:30:39.997095" elapsed="1.017978"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-05-23T21:30:41.015073" level="INFO">Opening url 'https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-05-23T21:30:41.015073" elapsed="0.686665"/>
+</kw>
+<arg>JKL@gmail.com</arg>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2024-05-23T21:30:33.910308" elapsed="7.791430"/>
+</kw>
+<status status="PASS" start="2024-05-23T21:30:33.910308" elapsed="7.791430"/>
+</test>
+<kw name="ClosingBrowser" owner="ParameterizeResource" type="TEARDOWN">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-23T21:30:43.202528" level="INFO">Slept 1 second 500 milliseconds.</msg>
+<arg>1.5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-23T21:30:41.701738" elapsed="1.500790"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-23T21:30:43.202528" elapsed="2.575532"/>
+</kw>
+<status status="PASS" start="2024-05-23T21:30:41.701738" elapsed="4.076322"/>
+</kw>
+<status status="PASS" start="2024-05-23T21:30:06.119612" elapsed="39.658448"/>
 </suite>
-<status status="PASS" start="2024-05-16T22:02:37.784084" elapsed="4.515777"/>
+<status status="PASS" start="2024-05-23T21:30:06.119612" elapsed="39.658448"/>
 </suite>
-<status status="PASS" start="2024-05-16T22:02:37.751126" elapsed="4.551729"/>
+<status status="PASS" start="2024-05-23T21:30:06.088331" elapsed="39.689729"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="RobotFrameworkPractice">RobotFrameworkPractice</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="RobotPractice">RobotFrameworkPractice.RobotPractice</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="RegisterProduct">RobotFrameworkPractice.RobotPractice.RegisterProduct</stat>
+<stat pass="4" fail="0" skip="0" id="s1" name="RobotFrameworkPractice">RobotFrameworkPractice</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1" name="RobotPractice">RobotFrameworkPractice.RobotPractice</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1-s1" name="ParameterizeTest">RobotFrameworkPractice.RobotPractice.ParameterizeTest</stat>
 </suite>
 </statistics>
 <errors>

@@ -4,7 +4,6 @@ Test Setup    open the browser with practice app url
 Test Teardown    closingbrowser
 
 
-
 *** Variables ***
 ${Expected_welcometext}    Welcome to our store
 ${expected_ele_}    //h2[normalize-space()='Welcome to our store']
