@@ -16,9 +16,6 @@ Entering username and password for TC2    DEF@gmail.com    ABC
 Entering username and password for TC3    GHI@gmail.com    ABC
 Entering username and password for TC4    JKL@gmail.com    ${EMPTY}
 
-
-
-
 *** Keywords ***
 
 EnteringUSernameandPassword
