@@ -1,247 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.11.0 on win32)" generated="2024-05-24T22:43:29.640394" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.11.0 on win32)" generated="2024-05-28T22:26:06.512212" rpa="false" schemaversion="5">
 <suite id="s1" name="RobotFrameworkPractice" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice">
-<suite id="s1-s1" name="RobotPractice" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice\RobotPractice">
-<suite id="s1-s1-s1" name="DDT2 Excel" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice\RobotPractice\DDT2_Excel.robot">
-<kw name="OpeningBrowser" owner="ParameterizeResource" type="SETUP">
+<suite id="s1-s1" name="RobotPracticeSelenium" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice\RobotPracticeSelenium">
+<suite id="s1-s1-s1" name="TesDemo3" source="C:\Users\praja\PycharmProjects\RobotFrameworkPractice\RobotPracticeSelenium\TesDemo3.robot">
+<test id="s1-s1-s1-t1" name="TestCase1" line="11">
+<kw name="open the browser with mortgage payment url">
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>0.5</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2024-05-24T22:43:31.062264" elapsed="0.000000"/>
+<status status="PASS" start="2024-05-28T22:26:06.830233" elapsed="0.001000"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-05-24T22:43:31.062264" level="INFO">Opening browser 'chrome' to base url 'https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F'.</msg>
-<arg>${enterurl}</arg>
-<arg>${browsername}</arg>
+<msg time="2024-05-28T22:26:06.831233" level="INFO">Opening browser 'chrome' to base url 'https://rahulshettyacademy.com/angularpractice/shop'.</msg>
+<arg>${url}</arg>
+<arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-05-24T22:43:31.062264" elapsed="3.593036"/>
+<status status="PASS" start="2024-05-28T22:26:06.831233" elapsed="6.284915"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-05-24T22:43:34.655300" elapsed="0.558947"/>
+<status status="PASS" start="2024-05-28T22:26:13.116148" elapsed="0.539165"/>
 </kw>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<status status="PASS" start="2024-05-24T22:43:31.062264" elapsed="4.151983"/>
+<status status="PASS" start="2024-05-28T22:26:06.829233" elapsed="6.826080"/>
 </kw>
-<test id="s1-s1-s1-t1" name="LoginwithUsingexcel" line="17">
-<kw name="EnteringUSernameandPassword">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-05-24T22:43:35.214247" level="INFO">Typing text 'ABC@gmail.com' into text field '//input[@id='Email']'.</msg>
-<arg>//input[@id='Email']</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-24T22:43:35.214247" elapsed="1.690546"/>
+<kw name="Verified card title on shop page">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-05-28T22:26:13.656269" level="INFO">@{expectedList} = [ iphone X | Samsung Note 8 | Nokia Edge | Blackberry ]</msg>
+<var>@{expectedList}</var>
+<arg>iphone X</arg>
+<arg>Samsung Note 8</arg>
+<arg>Nokia Edge</arg>
+<arg>Blackberry</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-05-28T22:26:13.656269" elapsed="0.000000"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-05-24T22:43:36.904793" level="INFO">Typing text 'ABC' into text field '//input[@id='Password']'.</msg>
-<arg>//input[@id='Password']</arg>
-<arg>${Password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-24T22:43:36.904793" elapsed="1.663224"/>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2024-05-28T22:26:13.657305" level="INFO">Length is 4.</msg>
+<msg time="2024-05-28T22:26:13.657305" level="INFO">${count} = 4</msg>
+<var>${count}</var>
+<arg>${expectedList}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2024-05-28T22:26:13.657305" elapsed="0.000000"/>
 </kw>
-<kw name="ClickonLoginbutton" owner="ParameterizeResource">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-05-24T22:43:38.568017" level="INFO">Clicking button '//button[normalize-space()='Log in']'.</msg>
-<arg>//button[normalize-space()='Log in']</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-24T22:43:38.568017" elapsed="2.964016"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-28T22:26:13.657305" elapsed="0.000976"/>
 </kw>
-<status status="PASS" start="2024-05-24T22:43:38.568017" elapsed="2.964016"/>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-05-28T22:26:14.177357" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="9f0699b1fa93b3ed3e6b5781b9791332", element="f.4CA8E1555522DEDB94680ABF3572F939.d.434C51D940BEF8FAC57980BCC7CA2B25.e.48")&gt;, &lt;selenium.webdriv...</msg>
+<var>${elements}</var>
+<arg>css:.card-title</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-05-28T22:26:13.658281" elapsed="0.519076"/>
 </kw>
-<kw name="VerifyingErrorMessage" owner="ParameterizeResource">
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2024-05-24T22:43:42.553749" level="INFO">Current page contains text 'Login was unsuccessful'.</msg>
-<arg>Login was unsuccessful</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2024-05-24T22:43:41.532033" elapsed="1.021716"/>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-05-28T22:26:14.177357" level="INFO">@{ActualList} = [ ]</msg>
+<var>@{ActualList}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-05-28T22:26:14.177357" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-05-24T22:43:41.532033" elapsed="1.021716"/>
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-28T22:26:14.178341" elapsed="0.525651"/>
 </kw>
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-05-24T22:43:42.553749" level="INFO">Opening url 'https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F'</msg>
-<arg>${url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-05-24T22:43:42.553749" elapsed="0.739727"/>
+<kw name="Append To List" owner="Collections">
+<arg>${ActualList}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-05-28T22:26:14.705003" elapsed="0.515643"/>
 </kw>
-<arg>username=ABC@gmail.com</arg>
-<arg>Password=ABC</arg>
-<status status="PASS" start="2024-05-24T22:43:35.214247" elapsed="8.079229"/>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="9f0699b1fa93b3ed3e6b5781b9791332", element="f.4CA8E1555522DEDB94680ABF3572F939.d.434C51D940BEF8FAC57980BCC7CA2B25.e.48")&gt;</var>
+<status status="PASS" start="2024-05-28T22:26:14.178341" elapsed="1.042305"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-28T22:26:15.220646" elapsed="0.515243"/>
 </kw>
-<status status="PASS" start="2024-05-24T22:43:35.214247" elapsed="8.082231"/>
+<kw name="Append To List" owner="Collections">
+<arg>${ActualList}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-05-28T22:26:15.736889" elapsed="0.514493"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="9f0699b1fa93b3ed3e6b5781b9791332", element="f.4CA8E1555522DEDB94680ABF3572F939.d.434C51D940BEF8FAC57980BCC7CA2B25.e.49")&gt;</var>
+<status status="PASS" start="2024-05-28T22:26:15.220646" elapsed="1.030736"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-28T22:26:16.251382" elapsed="0.514951"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${ActualList}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-05-28T22:26:16.767331" elapsed="0.513520"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="9f0699b1fa93b3ed3e6b5781b9791332", element="f.4CA8E1555522DEDB94680ABF3572F939.d.434C51D940BEF8FAC57980BCC7CA2B25.e.50")&gt;</var>
+<status status="PASS" start="2024-05-28T22:26:16.251382" elapsed="1.029469"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-28T22:26:17.280851" elapsed="0.517214"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${ActualList}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-05-28T22:26:17.798065" elapsed="0.515219"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="9f0699b1fa93b3ed3e6b5781b9791332", element="f.4CA8E1555522DEDB94680ABF3572F939.d.434C51D940BEF8FAC57980BCC7CA2B25.e.51")&gt;</var>
+<status status="PASS" start="2024-05-28T22:26:17.280851" elapsed="1.032433"/>
+</iter>
+<var>${element}</var>
+<value>@{elements}</value>
+<status status="PASS" start="2024-05-28T22:26:14.178341" elapsed="4.134943"/>
+</for>
+<kw name="Lists Should Be Equal" owner="Collections">
+<msg time="2024-05-28T22:26:18.315228" level="INFO">False</msg>
+<arg>${expectedList}</arg>
+<arg>${ActualList}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" start="2024-05-28T22:26:18.314230" elapsed="0.000998"/>
+</kw>
+<status status="PASS" start="2024-05-28T22:26:13.656269" elapsed="4.659989"/>
+</kw>
+<status status="PASS" start="2024-05-28T22:26:06.828208" elapsed="11.488748"/>
 </test>
-<test id="s1-s1-s1-t2" name="LoginwithUsingexcel" line="17">
-<kw name="EnteringUSernameandPassword">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-05-24T22:43:43.306259" level="INFO">Typing text 'DEF@gmail.com' into text field '//input[@id='Email']'.</msg>
-<arg>//input[@id='Email']</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-24T22:43:43.305479" elapsed="1.780104"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-05-24T22:43:45.085583" level="INFO">Typing text 'ABC' into text field '//input[@id='Password']'.</msg>
-<arg>//input[@id='Password']</arg>
-<arg>${Password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-24T22:43:45.085583" elapsed="1.660215"/>
-</kw>
-<kw name="ClickonLoginbutton" owner="ParameterizeResource">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-05-24T22:43:46.746809" level="INFO">Clicking button '//button[normalize-space()='Log in']'.</msg>
-<arg>//button[normalize-space()='Log in']</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-24T22:43:46.745798" elapsed="2.733146"/>
-</kw>
-<status status="PASS" start="2024-05-24T22:43:46.745798" elapsed="2.733146"/>
-</kw>
-<kw name="VerifyingErrorMessage" owner="ParameterizeResource">
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2024-05-24T22:43:50.495347" level="INFO">Current page contains text 'Login was unsuccessful'.</msg>
-<arg>Login was unsuccessful</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2024-05-24T22:43:49.478944" elapsed="1.016403"/>
-</kw>
-<status status="PASS" start="2024-05-24T22:43:49.478944" elapsed="1.016403"/>
-</kw>
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-05-24T22:43:50.495347" level="INFO">Opening url 'https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F'</msg>
-<arg>${url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-05-24T22:43:50.495347" elapsed="0.694010"/>
-</kw>
-<arg>username=DEF@gmail.com</arg>
-<arg>Password=ABC</arg>
-<status status="PASS" start="2024-05-24T22:43:43.304476" elapsed="7.884881"/>
-</kw>
-<status status="PASS" start="2024-05-24T22:43:43.300476" elapsed="7.888881"/>
-</test>
-<test id="s1-s1-s1-t3" name="LoginwithUsingexcel" line="17">
-<kw name="EnteringUSernameandPassword">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-05-24T22:43:51.194370" level="INFO">Typing text 'GHI@gmail.com' into text field '//input[@id='Email']'.</msg>
-<arg>//input[@id='Email']</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-24T22:43:51.194370" elapsed="1.655814"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-05-24T22:43:52.850184" level="INFO">Typing text 'ABC' into text field '//input[@id='Password']'.</msg>
-<arg>//input[@id='Password']</arg>
-<arg>${Password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-24T22:43:52.850184" elapsed="1.647438"/>
-</kw>
-<kw name="ClickonLoginbutton" owner="ParameterizeResource">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-05-24T22:43:54.497622" level="INFO">Clicking button '//button[normalize-space()='Log in']'.</msg>
-<arg>//button[normalize-space()='Log in']</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-24T22:43:54.497622" elapsed="2.733936"/>
-</kw>
-<status status="PASS" start="2024-05-24T22:43:54.497622" elapsed="2.733936"/>
-</kw>
-<kw name="VerifyingErrorMessage" owner="ParameterizeResource">
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2024-05-24T22:43:58.251121" level="INFO">Current page contains text 'Login was unsuccessful'.</msg>
-<arg>Login was unsuccessful</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2024-05-24T22:43:57.231558" elapsed="1.019563"/>
-</kw>
-<status status="PASS" start="2024-05-24T22:43:57.231558" elapsed="1.019563"/>
-</kw>
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-05-24T22:43:58.251121" level="INFO">Opening url 'https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F'</msg>
-<arg>${url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-05-24T22:43:58.251121" elapsed="0.696397"/>
-</kw>
-<arg>username=GHI@gmail.com</arg>
-<arg>Password=ABC</arg>
-<status status="PASS" start="2024-05-24T22:43:51.193370" elapsed="7.754148"/>
-</kw>
-<status status="PASS" start="2024-05-24T22:43:51.191372" elapsed="7.757153"/>
-</test>
-<test id="s1-s1-s1-t4" name="LoginwithUsingexcel" line="17">
-<kw name="EnteringUSernameandPassword">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-05-24T22:43:58.956475" level="INFO">Typing text 'JKL@gmal.com' into text field '//input[@id='Email']'.</msg>
-<arg>//input[@id='Email']</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-24T22:43:58.955467" elapsed="1.658030"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-05-24T22:44:00.613497" level="INFO">Typing text 'ABC' into text field '//input[@id='Password']'.</msg>
-<arg>//input[@id='Password']</arg>
-<arg>${Password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-24T22:44:00.613497" elapsed="1.664647"/>
-</kw>
-<kw name="ClickonLoginbutton" owner="ParameterizeResource">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-05-24T22:44:02.278144" level="INFO">Clicking button '//button[normalize-space()='Log in']'.</msg>
-<arg>//button[normalize-space()='Log in']</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-24T22:44:02.278144" elapsed="2.748243"/>
-</kw>
-<status status="PASS" start="2024-05-24T22:44:02.278144" elapsed="2.748243"/>
-</kw>
-<kw name="VerifyingErrorMessage" owner="ParameterizeResource">
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2024-05-24T22:44:06.042860" level="INFO">Current page contains text 'Login was unsuccessful'.</msg>
-<arg>Login was unsuccessful</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2024-05-24T22:44:05.026387" elapsed="1.016473"/>
-</kw>
-<status status="PASS" start="2024-05-24T22:44:05.026387" elapsed="1.016473"/>
-</kw>
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-05-24T22:44:06.042860" level="INFO">Opening url 'https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F'</msg>
-<arg>${url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-05-24T22:44:06.042860" elapsed="0.681662"/>
-</kw>
-<arg>username=JKL@gmal.com</arg>
-<arg>Password=ABC</arg>
-<status status="PASS" start="2024-05-24T22:43:58.954521" elapsed="7.770001"/>
-</kw>
-<status status="PASS" start="2024-05-24T22:43:58.950522" elapsed="7.774000"/>
-</test>
-<kw name="ClosingBrowser" owner="ParameterizeResource" type="TEARDOWN">
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-05-24T22:44:08.228112" level="INFO">Slept 1 second 500 milliseconds.</msg>
-<arg>1.5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-05-24T22:44:06.726522" elapsed="1.501590"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-05-24T22:44:08.228112" elapsed="2.628057"/>
-</kw>
-<status status="PASS" start="2024-05-24T22:44:06.726522" elapsed="4.129647"/>
-</kw>
-<status status="PASS" start="2024-05-24T22:43:29.702889" elapsed="41.153280"/>
+<status status="PASS" start="2024-05-28T22:26:06.553206" elapsed="11.765766"/>
 </suite>
-<status status="PASS" start="2024-05-24T22:43:29.702889" elapsed="41.153280"/>
+<status status="PASS" start="2024-05-28T22:26:06.549217" elapsed="11.772753"/>
 </suite>
-<status status="PASS" start="2024-05-24T22:43:29.656017" elapsed="41.200152"/>
+<status status="PASS" start="2024-05-28T22:26:06.518212" elapsed="11.805757"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="4" fail="0" skip="0" id="s1" name="RobotFrameworkPractice">RobotFrameworkPractice</stat>
-<stat pass="4" fail="0" skip="0" id="s1-s1" name="RobotPractice">RobotFrameworkPractice.RobotPractice</stat>
-<stat pass="4" fail="0" skip="0" id="s1-s1-s1" name="DDT2 Excel">RobotFrameworkPractice.RobotPractice.DDT2 Excel</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="RobotFrameworkPractice">RobotFrameworkPractice</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="RobotPracticeSelenium">RobotFrameworkPractice.RobotPracticeSelenium</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="TesDemo3">RobotFrameworkPractice.RobotPracticeSelenium.TesDemo3</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2024-05-24T22:43:43.298475" level="WARN">Multiple tests with name 'LoginwithUsingexcel' executed in suite 'RobotFrameworkPractice.RobotPractice.DDT2 Excel'.</msg>
-<msg time="2024-05-24T22:43:51.191372" level="WARN">Multiple tests with name 'LoginwithUsingexcel' executed in suite 'RobotFrameworkPractice.RobotPractice.DDT2 Excel'.</msg>
-<msg time="2024-05-24T22:43:58.950522" level="WARN">Multiple tests with name 'LoginwithUsingexcel' executed in suite 'RobotFrameworkPractice.RobotPractice.DDT2 Excel'.</msg>
 </errors>
 </robot>
